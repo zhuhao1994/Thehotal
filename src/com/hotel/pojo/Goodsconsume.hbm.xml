@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Goodsconsume" table="goodsconsume" catalog="hotel">
+        <id name="goodsconsumeid" type="java.lang.Integer">
+            <column name="goodsconsumeid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="guestroom" class="com.hotel.pojo.Guestroom" fetch="select" lazy="false">
+            <column name="roomid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="goods" class="com.hotel.pojo.Goods" fetch="select" lazy="false">
+            <column name="goodsid" not-null="true" />
+        </many-to-one>
+        <property name="goodsnum" type="int">
+            <column name="goodsnum" not-null="true" />
+        </property>
+        <property name="consumetime" type="timestamp">
+            <column name="consumetime" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

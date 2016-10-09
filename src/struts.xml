@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="ajax" extends="json-default">  
+        <action name="ajaxLogin" class="com.hotel.actions.ajaxDemo">  
+            <!-- 返回类型为json 在sjon-default中定义 -->  
+            <result type="json">  
+                <!-- root的值对应要返回的值的属性 -->  
+                <!-- 这里的result值即是 对应action中的 result -->  
+                <param name="root">result</param>  
+            </result>  
+        </action>  
+    </package> 
+    
+    <constant
+        name="struts.objectFactory"
+        value="spring" >
+    </constant>
+
+  
+<constant name="struts.convention.result.path" value="/"/>  
+ <!--配置Struts-convention注解的默认父包  -->  
+ <constant name="struts.convention.default.parent.package" value="myPackage"/>  
+   
+  <!--继承Struts-convention注解插件的xml  -->  
+  <package name="myPackage" extends="convention-default">  
+    
+       <interceptors>  
+          <!--配置自己写的登录拦截器  -->  
+          <interceptor name="loginInterceptor" class="com.hotel.actions.LoginInterceptor"/>  
+            
+          <!-- 配置一个自己的拦截器栈 -->  
+          <interceptor-stack name="myStack">  
+              <interceptor-ref name="loginInterceptor">  
+                  <param name="loginUser">Usertable</param>  
+                  <param name="excludeActionName">index,login</param>  
+              </interceptor-ref>  
+              <interceptor-ref name="defaultStack"/>  
+          </interceptor-stack>  
+      </interceptors>  
+        
+      <default-interceptor-ref name="myStack"/>   
+        
+      <global-results>  
+          <result name="login" type="redirectAction">page/checkInRoom/userlogin.jsp</result>  
+      </global-results>  
+  </package>  
+    
+</struts>

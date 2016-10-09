@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Usertable" table="usertable" catalog="hotel">
+        <id name="userid" type="java.lang.Integer">
+            <column name="userid" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="20" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="100" not-null="true" />
+        </property>
+        <property name="realname" type="string">
+            <column name="realname" length="20" not-null="true" />
+        </property>
+        <property name="userbirth" type="date">
+            <column name="userbirth" length="10" not-null="true" />
+        </property>
+        <property name="usersex" type="string">
+            <column name="usersex" length="10" not-null="true" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="20" not-null="true" />
+        </property>
+        <property name="salary" type="double">
+            <column name="salary" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="achievement" type="java.lang.Float">
+            <column name="achievement" precision="12" scale="0" />
+        </property>
+        <set name="hotelaccounts" table="hotelaccount" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userid" not-null="true" />
+            </key>
+            <one-to-many class="com.hotel.pojo.Hotelaccount" />
+        </set>
+        <set name="logtables" table="logtable" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userid" not-null="true" />
+            </key>
+            <one-to-many class="com.hotel.pojo.Logtable" />
+        </set>
+    </class>
+</hibernate-mapping>

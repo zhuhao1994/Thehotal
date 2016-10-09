@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Hotelaccount" table="hotelaccount" catalog="hotel">
+        <id name="hid" type="java.lang.Integer">
+            <column name="hid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="com.hotel.pojo.Customer" fetch="select" lazy="false">
+            <column name="cusid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="guestroom" class="com.hotel.pojo.Guestroom" fetch="select" lazy="false">
+            <column name="roomid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usertable" class="com.hotel.pojo.Usertable" fetch="select" lazy="false">
+            <column name="userid" not-null="true" />
+        </many-to-one>
+        <property name="deposit" type="float">
+            <column name="deposit" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="cometime" type="timestamp">
+            <column name="cometime" length="19" not-null="true" />
+        </property>
+        <property name="leavetime" type="timestamp">
+            <column name="leavetime" length="19" />
+        </property>
+        <property name="consume" type="float">
+            <column name="consume" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="allconsume" type="float">
+            <column name="allconsume" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="50" />
+        </property>
+        <property name="accuntstatus" type="int">
+            <column name="accuntstatus" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

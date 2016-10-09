@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Logtable" table="logtable" catalog="hotel">
+        <id name="logid" type="java.lang.Integer">
+            <column name="logid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usertable" class="com.hotel.pojo.Usertable" fetch="select" lazy="false">
+            <column name="userid" not-null="true" />
+        </many-to-one>
+        <property name="log" type="string">
+            <column name="log" length="10000" />
+        </property>
+        <property name="suggestion" type="string">
+            <column name="suggestion" length="10000" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Customer" table="customer" catalog="hotel">
+        <id name="cusid" type="java.lang.Integer">
+            <column name="cusid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="vip" class="com.hotel.pojo.Vip" fetch="select" lazy="false">
+            <column name="vid" not-null="true" />
+        </many-to-one>
+        <property name="cusname" type="string">
+            <column name="cusname" length="20" not-null="true" />
+        </property>
+        <property name="cardid" type="string">
+            <column name="cardid" length="18" not-null="true" />
+        </property>
+        <property name="cussex" type="string">
+            <column name="cussex" length="10" not-null="true" />
+        </property>
+        <property name="custel" type="string">
+            <column name="custel" length="11" not-null="true" />
+        </property>
+        <property name="balance" type="java.lang.Double">
+            <column name="balance" precision="22" scale="0" />
+        </property>
+        <property name="cusbirth" type="date">
+            <column name="cusbirth" length="10" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="50" not-null="true" />
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="hotelaccounts" table="hotelaccount" inverse="true"   fetch="select">
+            <key>
+                <column name="cusid" not-null="true" />
+            </key>
+            <one-to-many class="com.hotel.pojo.Hotelaccount" />
+        </set>
+    </class>
+</hibernate-mapping>

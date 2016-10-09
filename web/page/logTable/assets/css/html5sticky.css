@@ -1,0 +1,321 @@
+/* common styles start */
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1em;
+}
+
+a, a:visited {
+	color: #fff;
+	outline: none !important;
+	text-decoration: none;
+}
+
+a img, a:visited img {
+	border: none;
+}
+
+textarea {
+	overflow: auto;
+}
+/* common styles end */
+#addnote {
+	display: block;
+	margin: 5px;
+	width: auto;
+	float: left;
+	width: 25px;
+	height: 25px;
+}
+
+#removenotes {
+	display: block;
+	margin: 5px;
+	width: auto;
+	float: left;
+	width: 25px;
+	height: 25px;
+}
+
+#main {
+	margin: auto;
+	background: url("../img/checkInRoom.jpg");
+	height: "100%";
+	width: "100%";
+	color: #fff;
+	padding: 10px;
+	height: 700px;
+	overflow: hidden;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+footer {
+	margin: auto;
+	width: 300px;
+}
+
+.note_common, .bignote, .editinfo {
+	padding: 20px 10px 10px 10px;
+	color: #000;
+	float: left;
+	margin: 20px;
+	margin-top: 0;
+	position: relative;
+	cursor: pointer;
+	border: 3px solid white;
+	/* page effect start */
+	-webkit-border-bottom-left-radius: 20px 500px;
+	-webkit-border-bottom-right-radius: 500px 30px;
+	-webkit-border-top-right-radius: 5px 100px;
+	-moz-border-radius-bottomleft: 20px 500px;
+	-moz-border-radius-bottomright: 500px 30px;
+	-moz-border-radius-topright: 5px 100px;
+	border-radius-bottomleft: 20px 500px;
+	border-radius-bottomright: 500px 30px;
+	border-radius-topright: 5px 100px;
+	-webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 2px 10px 1px rgba(0, 0, 0, .2);
+	/* page effect end */
+	-moz-box-shadow: -7px 10px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: -7px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: -7px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* for rotation start */
+.rotateR {
+	-moz-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	-webkit-transform: rotate(3deg);
+	transform: rotate(3deg);
+	/*
+ * The following two rules are for IE only and
+ * should be wrapped in conditional comments.
+ * The -ms-filter rule should be on one line 
+ * and always *before* the filter rule if
+ * used in the same rule.
+ */
+	/* IE8+ - must be on one line, unfortunately */
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.Matrix(M11=0.9986295347545738, M12=-0.05233595624294437, M21=0.05233595624294437, M22=0.9986295347545738, SizingMethod='auto expand')";
+	/* IE6 and 7 */
+	filter: progid:DXImageTransform.Microsoft.Matrix(
+            M11=0.9986295347545738, M12=-0.05233595624294437, M21=0.05233595624294437,
+		M22=0.9986295347545738, SizingMethod='auto expand');
+	/*
+    * To make the transform-origin be the middle of
+    * the object.    Note: These numbers
+    * are approximations.  For more accurate results,
+    * use Internet Explorer with this tool.
+    */
+	margin-left: -4px;
+	margin-top: -8px;
+}
+
+.rotateL {
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.Matrix(M11=0.9986295347545738, M12=0.05233595624294388, M21=-0.05233595624294388, M22=0.9986295347545738, SizingMethod='auto expand')";
+	filter: progid:DXImageTransform.Microsoft.Matrix(
+            M11=0.9986295347545738, M12=0.05233595624294388, M21=-0.05233595624294388,
+		M22=0.9986295347545738, SizingMethod='auto expand');
+	margin-left: -4px;
+	margin-top: -8px;
+}
+/* for rotation end */
+.note_common h2 {
+	text-align: center;
+	margin-top: 0;
+	padding-top: 0;
+	font-family: 微软雅黑, Microsoft YaHei;
+}
+
+.note_common p {
+	font-size: 0.9em;
+	overflow: auto;
+	overflow-x: hidden;
+	line-height: 18px;
+	text-align: left;
+	font-family: 'Architects Daughter', cursive;
+}
+
+.inset {
+	-moz-box-shadow: inset 0 0 10px #cccccc;
+	-webkit-box-shadow: inset 0 0 10px #cccccc;
+	box-shadow: inset 0 0 10px #cccccc;
+	background: #f8f7f7;
+	color: #333;
+	padding: 5px;
+	font-size: 0.9em;
+	border: 1px solid #e7e7e7;
+	font-family: 'Architects Daughter', cursive;
+}
+
+input:focus, textarea:focus, select:focus {
+	border: 1px solid #fafafa;
+	-webkit-box-shadow: 0 0 6px #000;
+	-moz-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+.tip {
+	background: url(../img/tip.png) no-repeat;
+	font-size: 13px;
+	padding-left: 25px;
+	padding-top: 3px;
+	vertical-align: middle;
+}
+
+.icons-footer .ficon {
+	margin-left: 10px;
+	position: absolute;
+	bottom: -15px;
+}
+
+/* for sticky note background oolors */
+.stickynote0 {
+	background-color: #6EB6F3;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#6EB6F3),
+		to(#6EB6F3));
+	background-image: -webkit-linear-gradient(top, #6EB6F3, #6EB6F3);
+	background-image: -moz-linear-gradient(top, #6EB6F3, #6EB6F3);
+	background-image: -ms-linear-gradient(top, #6EB6F3, #6EB6F3);
+	background-image: -o-linear-gradient(top, #6EB6F3, #6EB6F3);
+	background-image: linear-gradient(top, #6EB6F3, #6EB6F3);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#6EB6F3',
+		EndColorStr='#6EB6F3');
+}
+
+.stickynote1 {
+	background-color: #5277FD;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#5277FD),
+		to(#5277FD));
+	background-image: -webkit-linear-gradient(top, #5277FD, #5277FD);
+	background-image: -moz-linear-gradient(top, #5277FD, #5277FD);
+	background-image: -ms-linear-gradient(top, #5277FD, #5277FD);
+	background-image: -o-linear-gradient(top, #5277FD, #5277FD);
+	background-image: linear-gradient(top, #5277FD, #5277FD);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5277FD',
+		EndColorStr='#5277FD');
+}
+
+.stickynote2 {
+	background-color: #2E5AFC;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#2E5AFC),
+		to(#2E5AFC));
+	background-image: -webkit-linear-gradient(top, #2E5AFC, #2E5AFC);
+	background-image: -moz-linear-gradient(top, #2E5AFC, #2E5AFC);
+	background-image: -ms-linear-gradient(top, #2E5AFC, #2E5AFC);
+	background-image: -o-linear-gradient(top, #2E5AFC, #2E5AFC);
+	background-image: linear-gradient(top, #2E5AFC, #2E5AFC);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#2E5AFC',
+		EndColorStr='#2E5AFC');
+}
+
+.stickynote3 {
+	background-color: #ACBEFE;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ACBEFE),
+		to(#ACBEFE));
+	background-image: -webkit-linear-gradient(top, #ACBEFE, #ACBEFE);
+	background-image: -moz-linear-gradient(top, #ACBEFE, #ACBEFE);
+	background-image: -ms-linear-gradient(top, #ACBEFE, #ACBEFE);
+	background-image: -o-linear-gradient(top, #ACBEFE, #ACBEFE);
+	background-image: linear-gradient(top, #ACBEFE, #ACBEFE);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ACBEFE',
+		EndColorStr='#ACBEFE');
+}
+
+.stickynote4 {
+	background-color: #9AB0FE;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#9AB0FE),
+		to(#9AB0FE));
+	background-image: -webkit-linear-gradient(top, #9AB0FE, #9AB0FE);
+	background-image: -moz-linear-gradient(top, #9AB0FE, #9AB0FE);
+	background-image: -ms-linear-gradient(top, #9AB0FE, #9AB0FE);
+	background-image: -o-linear-gradient(top, #9AB0FE, #9AB0FE);
+	background-image: linear-gradient(top, #9AB0FE, #9AB0FE);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#9AB0FE',
+		EndColorStr='#9AB0FE');
+}
+
+.stickynote5 {
+	background-color: #55A9F9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#55A9F9),
+		to(#55A9F9));
+	background-image: -webkit-linear-gradient(top, #55A9F9, #55A9F9);
+	background-image: -moz-linear-gradient(top, #55A9F9, #55A9F9);
+	background-image: -ms-linear-gradient(top, #55A9F9, #55A9F9);
+	background-image: -o-linear-gradient(top, #55A9F9, #55A9F9);
+	background-image: linear-gradient(top, #55A9F9, #55A9F9);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#55A9F9',
+		EndColorStr='#55A9F9');
+}
+
+.stickynote6 {
+	background-color: #3297F8;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#3297F8),
+		to(#3297F8));
+	background-image: -webkit-linear-gradient(top, #3297F8, #3297F8);
+	background-image: -moz-linear-gradient(top, #3297F8, #3297F8);
+	background-image: -ms-linear-gradient(top, #3297F8, #3297F8);
+	background-image: -o-linear-gradient(top, #3297F8, #3297F8);
+	background-image: linear-gradient(top, #3297F8, #3297F8);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#3297F8',
+		EndColorStr='#3297F8');
+}
+
+.stickynote7 {
+	background-color: #C0DFFD;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#C0DFFD),
+		to(#C0DFFD));
+	background-image: -webkit-linear-gradient(top, #C0DFFD, #C0DFFD);
+	background-image: -moz-linear-gradient(top, #C0DFFD, #C0DFFD);
+	background-image: -ms-linear-gradient(top, #C0DFFD, #C0DFFD);
+	background-image: -o-linear-gradient(top, #C0DFFD, #C0DFFD);
+	background-image: linear-gradient(top, #C0DFFD, #C0DFFD);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#C0DFFD',
+		EndColorStr='#C0DFFD');
+}
+
+.stickynote8 {
+	background-color: #67B2FA;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#67B2FA),
+		to(#67B2FA));
+	background-image: -webkit-linear-gradient(top, #67B2FA, #67B2FA);
+	background-image: -moz-linear-gradient(top, #67B2FA, #67B2FA);
+	background-image: -ms-linear-gradient(top, #67B2FA, #67B2FA);
+	background-image: -o-linear-gradient(top, #67B2FA, #67B2FA);
+	background-image: linear-gradient(top, #67B2FA, #67B2FA);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#67B2FA',
+		EndColorStr='#67B2FA');
+}
+
+.stickynote9 {
+	background-color: #83CCF0;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#83CCF0),
+		to(#83CCF0));
+	background-image: -webkit-linear-gradient(top, #83CCF0, #83CCF0);
+	background-image: -moz-linear-gradient(top, #83CCF0, #83CCF0);
+	background-image: -ms-linear-gradient(top, #83CCF0, #83CCF0);
+	background-image: -o-linear-gradient(top, #83CCF0, #83CCF0);
+	background-image: linear-gradient(top, #83CCF0, #83CCF0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#83CCF0',
+		EndColorStr='#83CCF0');
+}
+/*****main***/

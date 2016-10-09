@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Guestroom" table="guestroom" catalog="hotel">
+        <id name="roomid" type="java.lang.Integer">
+            <column name="roomid" />
+            <generator class="identity" />
+        </id>
+        <property name="roomno" type="int">
+            <column name="roomno" not-null="true" />
+        </property>
+        <property name="roomtype" type="string">
+            <column name="roomtype" length="20" not-null="true" />
+        </property>
+        <property name="roomprice" type="float">
+            <column name="roomprice" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="roomstatus" type="int">
+            <column name="roomstatus" not-null="true" />
+        </property>
+        <property name="roomtel" type="string">
+            <column name="roomtel" length="7" not-null="true" />
+        </property>
+        <property name="roomdiscount" type="java.lang.Float">
+            <column name="roomdiscount" precision="12" scale="0" />
+        </property>
+        <set name="hotelaccounts" table="hotelaccount" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="roomid" not-null="true" />
+            </key>
+            <one-to-many class="com.hotel.pojo.Hotelaccount" />
+        </set>
+        <set name="goodsconsumes" table="goodsconsume" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="roomid" not-null="true" />
+            </key>
+            <one-to-many class="com.hotel.pojo.Goodsconsume" />
+        </set>
+    </class>
+</hibernate-mapping>

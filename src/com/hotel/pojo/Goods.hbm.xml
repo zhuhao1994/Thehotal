@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Goods" table="goods" catalog="hotel">
+        <id name="goodsid" type="java.lang.Integer">
+            <column name="goodsid" />
+            <generator class="identity" />
+        </id>
+        <property name="goodsname" type="string">
+            <column name="goodsname" length="20" not-null="true" />
+        </property>
+        <property name="goodscount" type="int">
+            <column name="goodscount" not-null="true" />
+        </property>
+        <property name="goodsprice" type="float">
+            <column name="goodsprice" precision="12" scale="0" not-null="true" />
+        </property>
+        <set name="goodsconsumes" table="goodsconsume" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="goodsid" not-null="true" />
+            </key>
+            <one-to-many class="com.hotel.pojo.Goodsconsume" />
+        </set>
+    </class>
+</hibernate-mapping>

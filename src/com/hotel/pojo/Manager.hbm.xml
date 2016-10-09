@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-8 14:31:01 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hotel.pojo.Manager" table="manager" catalog="hotel">
+        <id name="managerid" type="java.lang.Integer">
+            <column name="managerid" />
+            <generator class="identity" />
+        </id>
+        <property name="mananame" type="string">
+            <column name="mananame" length="20" not-null="true" />
+        </property>
+        <property name="manapassword" type="string">
+            <column name="manapassword" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
